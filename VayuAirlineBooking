@@ -1,0 +1,126 @@
+import datetime
+def Airlines():
+    fare = 0
+    J1 = ("1. NEW DELHI TO GOA")
+    J2 = ("3. NEW DELHI TO SRINAGAR ")
+    J3 = ("2. NEW DELHI TO AHEMDABAD")
+    J4 = ("4. NEW DELHI TO BENGALURU")
+    J5 = ("5. NEW DELHI TO MUMBAI")
+    J6 = ("6. NEW DELHI TO HYDERABAD")
+    J7 = ("7. NEW DELHI TO KATHMANDU")
+    J8 = ("8. NEW DELHI TO SINGAPORE")
+    J9 = ("9. NEW DELHI TO DUBAI")
+    J10 = ("10. NEW DELHI TO BANGKOK")
+    J11 = ("11. NEW DELHI TO CHENNAI")
+    J12 = ("12. NEW DELHI TO KOLKATA")
+    travel = [J1,J2,J3,J4,J5,J6,J7,J8,J9,J10,J11,J12]
+    for x in travel:
+        print(x)
+    Question = int(input("Enter your journey : "))
+    if Question > 0:
+        print("A. Indigo Airlines")
+        print("B. SpiceJet Airlines")
+        print("C. Air India Airlines")
+        print("D. Exit")
+        ChooseAirline = input("Please choose your Airline : ")
+        if ChooseAirline == 'A':
+            Airtype = "Indigo Airlines"
+            if Question == 1:
+                fare=6836
+            elif Question == 2:
+                fare=3682
+            elif Question == 3:
+                fare=7388
+            elif Question == 4:
+                fare=6823
+            elif Question == 5:
+                fare=4742
+            elif Question == 6:
+                fare=5188
+            elif Question == 7:
+                fare=12174
+            elif Question == 8:
+                fare=20397
+            elif Question == 9:
+                fare=14609
+            elif Question == 10:
+                fare=21615
+            elif Question == 11:
+                fare=7548
+            elif Question == 12:
+                fare=5332
+            Jrny =  travel[Question-1]
+            ticketdetails(fare,Jrny,Airtype)
+        elif ChooseAirline == 'B':
+            Airtype = "SpiceJet Airlines"
+            if Question == 1:
+                fare=8424
+            elif Question == 2:
+                fare=3783
+            elif Question == 3:
+                fare=7652
+            elif Question == 4:
+                fare=6658
+            elif Question == 5:
+                fare=5164
+            elif Question == 6:
+                fare=4778
+            elif Question == 7:
+                fare=13197
+            elif Question == 8:
+                fare=19897
+            elif Question == 9:
+                fare=15996
+            elif Question == 10:
+                fare=17976
+            elif Question == 11:
+                fare=7023
+            elif Question == 12:
+                fare=5657
+            Jrny = travel[Question-1]
+            ticketdetails(fare,Jrny,Airtype)
+        elif ChooseAirline == 'C':
+            Airtype = "Air India Airlines"
+            if Question == 1:
+                fare=8682
+            elif Question == 2:
+                fare=5098
+            elif Question == 3:
+                fare=10463
+            elif Question == 4:
+                fare=8914
+            elif Question == 5:
+                fare=5754
+            elif Question == 6:
+                fare=5572
+            elif Question == 7:
+                fare=12313
+            elif Question == 8:
+                fare=26051
+            elif Question == 9:
+                fare=20077
+            elif Question == 10:
+                fare=21359
+            elif Question == 11:
+                fare=8844
+            elif Question == 12:
+                fare=8349
+            Jrny =  travel[Question-1]
+            ticketdetails(fare,Jrny,Airtype)
+        elif ChooseAirline == 'D':
+            print("Bye Bye !!!")
+            print("Have a nice day !!!")            
+        else:
+            print("Please enter in capital letters or else you have choosed wrong option")
+def ticketdetails(fare,Jrny,Airtype):
+    current_time = datetime.datetime.now()
+    name = input("Enter your name : ")
+    age = input("Enter your age : ")
+    DateQuestionney = input("Enter date of Journey(dd/mm/yyyy) : ")
+    print("--------------------------------------------------------")
+    print("Name : "+name+"      Date of Journey : "+ DateQuestionney)
+    print("Age : "+age+"      Date of Booking : "+ str(current_time))
+    print("Fare : "+ str(fare))
+    print("Journey " + Jrny[2:])
+    print("Airlines you selected " + Airtype)
+Airlines()
